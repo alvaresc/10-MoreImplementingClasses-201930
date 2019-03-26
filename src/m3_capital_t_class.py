@@ -23,7 +23,7 @@ def main():
     run_test_simple_t()
     run_test_set_colors()
     run_test_move_by()
-    # run_test_clone()
+    run_test_clone()
 
 
 def run_test_simple_t():
@@ -316,7 +316,7 @@ class CapitalT(object):
           :rtype: CapitalT
         """
         # ---------------------------------------------------------------------
-        # TODO: 7.
+        # DONE: 7.
         #   READ the above specification, including the Example.
         #   Implement this method, then TEST it by:
         #     a. Un-comment the call to its test function, in main.  Run.
@@ -329,11 +329,11 @@ class CapitalT(object):
         # variables beyond  h_rect  and  v_rect, at any point of this exercise.
         #######################################################################
 
-        center_x = (self.h_rect.corner_1.x + self.h_rect.corner2.x)/2
-        center_y = (self.h_rect.corner_1.y + self.h_rect.corner2.y)/2
-        new_t = CapitalT(rg.Point(center_x,center_y), self.h_rect.get_width(), 150, 40)
-
-        intersection_center, width, height, letter_thickness)
+        center_x = (self.h_rect.corner_1.x + self.h_rect.corner_2.x)/2
+        center_y = (self.h_rect.corner_1.y + self.h_rect.corner_2.y)/2
+        new_t = CapitalT(rg.Point(center_x,center_y), self.h_rect.get_width(), self.v_rect.get_height(),self.h_rect.get_height())
+        new_t.set_colors(self.h_rect.fill_color,self.v_rect.outline_color)
+        return new_t
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # -----------------------------------------------------------------------------
